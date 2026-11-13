@@ -1,0 +1,22 @@
+# PHPUnit
+.phpunit.cache/
+.phpunit.result.cache
+tests-output.txt
+vendor/
+composer.lock
+
+# Files uploaded through the website (keep the folders and their .htaccess)
+uploads/photos/*
+uploads/assignments/*
+uploads/submissions/*
+!uploads/**/.htaccess
+!uploads/**/.gitkeep
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.log

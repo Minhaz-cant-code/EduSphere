@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    PHPUnit settings for EduSphere.
+    Run the tests by double-clicking run_tests.bat (see TESTING.md for more commands).
+-->
+<phpunit bootstrap="tests/bootstrap.php"
+         colors="true"
+         cacheDirectory=".phpunit.cache"
+         failOnWarning="true"
+         failOnRisky="true">
+
+    <testsuites>
+        <!-- Pure functions: no database needed for the logic itself -->
+        <testsuite name="Unit">
+            <directory>tests/Unit</directory>
+        </testsuite>
+        <!-- Functions that read/write MySQL (uses the separate edusphere_test database) -->
+        <testsuite name="Database">
+            <directory>tests/Database</directory>
+        </testsuite>
+    </testsuites>
+
+    <php>
+        <!-- Tests NEVER touch your real "edusphere" database -->
+        <env name="DB_NAME" value="edusphere_test" force="true"/>
+    </php>
+
+    <source>
+        <include>
+            <file>includes/functions.php</file>
+        </include>
+    </source>
+</phpunit>
